@@ -10,6 +10,10 @@
     font-weight: bold;
 }
 
+.amazon-header {
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
 #logo:hover {
     color: #fff;
     text-decoration: none;
@@ -17,20 +21,24 @@
 
 .center {
     text-align: center;
+    margin-left: 5em;
+    width: 100%;
 }
 
 .jumbotron {
     background-image: asset-url('chuttersnap-fyaTq-fIlro-unsplash.jpg');
     background-size:cover;
-    height: 550px;
+    height: 32em;
+    margin-left: 20px;
 }
 
 .jumbotron h1 {
-    color: green;
+    color: #fff;
     text-align:center;
     margin-bottom: 30px;
     letter-spacing: -1px;
     font-weight: bold;
+    margin-top: 3em;
     
 }
 
@@ -38,10 +46,12 @@
     margin-bottom: 2em;
 }
 
-.btn-xlarge {
-    font-size: 1.7em;
-    background-color: black;
-}
+// .btn-xlarge {
+//     font-size: 1.7em;
+//     background-color: black;
+//     justify-content: center;
+//     display: inline-block;
+// }
 
 .product-index {
     font-weight: bold;
@@ -117,8 +127,4 @@ footer ul li {
     margin-left: 15px;
 }
 
-.center {
-    margin-left: 5em;
-    width: 100%;
-}
 

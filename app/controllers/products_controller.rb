@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+before_action :authenticate_user!, except: [:index, :show] 
+# authenticate_user! is found in application_controller 
+# 
 before_action :set_products, only: [:edit, :update, :show, :destroy]
 
   def index

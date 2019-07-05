@@ -1,0 +1,23 @@
+
+<h1 class="product-index" align="center">All Products List</h1>
+
+<% @products.each do |product| %>
+<div class="row">
+    <div class="col-sm-10 offset-1">
+        <div class="card card-body bg-light">
+            <div class="product-title">
+                <%= link_to product.title, product_path(product)%>
+            </div>
+            <div class="product-body">
+                <%= product.description%>
+                <%= product.price%>
+            </div>
+          
+    <div class="product-actions">
+        <%= link_to  "Edit this product", edit_product_path(product), class: "btn btn-sm btn-primary" %>
+        <%= link_to 'Delete this listing', product_path(product), method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-sm btn-danger ml-1"%>
+    </div>
+</div>
+</div>
+</div>
+<%end%>

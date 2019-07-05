@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
 
-
     before_action :authenticate_user!
     def create
         @product = Product.find(params[:product_id]) #query the product id (looking for the id of the product)        
@@ -8,7 +7,7 @@ class ReviewsController < ApplicationController
         # this is creating a new review and review_params is a private method 
         # that's requiring the review and permits the body and rating of the review
         @review.product = @product # setting the id of the review to the product
-        
+        @review.user = current_user
         # so the ifelse statement is saying the if the review has been save, 
         # redirect to the product_path (which is the show.html.erb file)
         # else render the product_path (which is the show.html.erb file)
@@ -26,6 +25,7 @@ class ReviewsController < ApplicationController
         redirect_to product_path(@review.product)
     end
     
+
     private 
     
     def review_params

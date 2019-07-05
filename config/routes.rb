@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get('/contact_us', { to: 'contacts#index', as: :contact })
   post('/contact_us', { to: 'contacts#create' })
 
+  
   resources :users, only: [:new, :create]
   resource :session, only: [:new, :create, :destroy]
  

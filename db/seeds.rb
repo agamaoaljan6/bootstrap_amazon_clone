@@ -11,13 +11,13 @@
 # rails db:seed
 
 
-NUM_QUESTIONS = 200
+NUM_PRODUCTS = 200
 NUM_USERS = 10
 PASSWORD = "supersecret"
 
-Answer.delete_all
-Question.delete_all
-User.delete_all
+Review.destroy_all
+# Product.delete_all
+# User.delete_all
 
 super_user = User.create(
   first_name: "Jon",
@@ -38,22 +38,22 @@ NUM_USERS.times do
 end
 users = User.all
 
-NUM_QUESTIONS.times do
+NUM_PRODUCTS.times do
   created_at = Faker::Date.backward(365 * 5)
-  q = Question.create(
+  q = Product.create(
     # Faker is a ruby module. We access classes
     # or other modules inside of it with ::.
     # Here, Hacker is a class inside of the
     # Faker module
     title: Faker::Hacker.say_something_smart,
-    body: Faker::ChuckNorris.fact,
+    description: Faker::ChuckNorris.fact,
     created_at: created_at,
     updated_at: created_at,
     user: users.sample
   )
   if q.valid?
-    q.answers = rand(0..15).times.map do
-      Answer.new(
+    q.reviews = rand(0..15).times.map do
+      Review.new(
         body: Faker::GreekPhilosophers.quote,
         user: users.sample
       )
@@ -61,11 +61,11 @@ NUM_QUESTIONS.times do
   end
 end
 
-questions = Question.all
-answers = Answer.all
+products = Product.all
+reviews = Review.all
 
-puts Cowsay.say("Generated #{questions.count} questions", :frogs)
-puts Cowsay.say("Generated #{answers.count} answers", :tux)
+puts Cowsay.say("Generated #{products.count} products", :frogs)
+puts Cowsay.say("Generated #{reviews.count} reviews", :tux)
 puts Cowsay.say("Generated #{users.count} user", :stegosaurus)
 
 puts "Login with #{super_user.email} and password: #{PASSWORD}"

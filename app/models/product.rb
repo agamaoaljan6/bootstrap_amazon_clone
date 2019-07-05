@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
     # This is where you put validations for your application
+    belongs_to :user
     has_many(:reviews, dependent: :destroy)
 
     validates(

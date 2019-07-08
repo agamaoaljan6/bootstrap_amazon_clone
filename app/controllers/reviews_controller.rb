@@ -19,6 +19,15 @@ class ReviewsController < ApplicationController
         end
     end 
     
+    def hide 
+        review = Review.find(params[:review_id])
+        review.hidden = false
+        review.user = current_user
+        review.save
+        flash[:success] = "review hidden successfully!"
+        redirect_to product_path(review.product)
+    end
+
     def destroy
         @review = Review.find(params[:id])
         @review.destroy

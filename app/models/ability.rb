@@ -12,6 +12,9 @@ class Ability
     #   else
     #     can :read, :all
     #   end
+
+
+
     if user.is_admin?
       can :manage, :all
       end 

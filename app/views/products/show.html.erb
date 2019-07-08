@@ -46,7 +46,10 @@
 
 
 <div class="row" align="center">
+
   <% @reviews.each do |review| %>
+  <%if review.hidden %>
+ 
   <div class="col-sm-4">
     <div class="product-review">
       <%= review.body %>
@@ -55,16 +58,18 @@
       <%= "Rating: #{review.rating}"%>
     </div>
 
-    <div >
+    <div>
       <%if can? :crud, review%>
-      <%= link_to("Delete",product_review_path(@product, review),method: :delete,data: {confirm: "Are you sure?"},class: 'btn btn-primary del-btn')%>
-  
+      <%= link_to("Delete",product_review_path(@product, review),method: :delete, data: {confirm: "Are you sure?"},class: 'btn btn-primary del-btn')%>
       <%end%>
+      <%= link_to("Hide",product_review_path(@product, review)+ "/hide" ,method: :patch, data: {confirm: "Are you sure?"},class: 'btn btn-primary del-btn')%>
+      
     </div>
     <div class="col-sm-offset-4 col-sm-2">
      
     </div>
-
+  
     <p class="product-answer"> Answered <%= time_ago_in_words(review.created_at) %> ago </p>
+    <%end%>
   </div>
   <% end %>

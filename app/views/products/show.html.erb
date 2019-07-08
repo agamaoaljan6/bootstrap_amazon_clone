@@ -8,9 +8,11 @@
     </strong><%="$#{@product.price}"%></h5>
 
   <div class="product-actions row">
+      <%if can? :crud, @product%> 
     <%= link_to  "Edit this product", edit_product_path(@product), class: "btn btn-xs btn-primary" %>
     <%= link_to  "View all products", products_path, class: "btn btn-xs btn-success ml-2" %>
     <%= link_to 'Delete this listing', product_path(@product), method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-xs btn-danger ml-2"%>
+    <%end%>
   </div>
 </div>
 <br>
@@ -51,7 +53,9 @@
           </div>
 
           <div class="col-sm-offset-4 col-sm-2">
+              <%if can? :crud, review%>
             <%= link_to("Delete",product_review_path(@product, review),method: :delete,data: {confirm: "Are you sure?"},class: 'btn btn-primary del-btn')%>
+            <%end%>
           </div>
           <p class="product-answer"> Answered <%= time_ago_in_words(review.created_at) %> ago </p>
         </div>

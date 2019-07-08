@@ -15,7 +15,8 @@ before_action :authorize!, only: [:edit, :update, :destroy]
 
   def create
       @product = Product.new(product_params)
-      @product_user = current_user
+      @product.user = current_user # product_user is a variable 
+      # product.user is a method 
       if @product.save
       flash[:success] = "Product was successfully listed!"
       redirect_to product_path(@product)
@@ -34,7 +35,6 @@ before_action :authorize!, only: [:edit, :update, :destroy]
   end
 
   def update
-
       if @product.update(product_params)
           flash[:success] = "Product was successfully updated!"
           redirect_to product_path(@product)
@@ -44,10 +44,12 @@ before_action :authorize!, only: [:edit, :update, :destroy]
   end
 
   def destroy
-  @product.destroy
-  flash[:danger] = "Product list was successfully deleted!"
-  redirect_to products_path
-  end
+    flash[:danger] = "Product destoryed!"
+    @product.destroy
+    redirect_to products_path
+  
+end
+
 
   private
 
@@ -62,7 +64,7 @@ before_action :authorize!, only: [:edit, :update, :destroy]
   def authorize! 
     flash[:danger] = "Not Authorized!"
     redirect_to root_path unless 
-    can?(:crud, @question)
+    can?(:crud, @product)
   end 
 
 end

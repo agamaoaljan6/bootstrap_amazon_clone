@@ -2,6 +2,8 @@
 <div class="container">
     <div class="row">
         <% @products.each do |product| %>
+       
+      
         <div class="col-sm-6">
             <div class="card card-body bg-light">
                 <div class="product-title">
@@ -10,11 +12,11 @@
                 <div class="product-body">
                     <%= product.description%>
                 </div>
-                <div class="product-actions">
-                    <%= link_to 'Delete this listing', product_path(product), method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-sm btn-danger ml-1"%>
-                </div>
             </div>
         </div>
+       
+
+
         <%end%>
     </div>
 </div>

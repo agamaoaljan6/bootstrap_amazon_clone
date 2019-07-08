@@ -15,6 +15,7 @@ class Ability
     if user.is_admin?
       can :manage, :all
       end 
+
     # The first argument to `can` is the action you are giving the user
     # permission to do.
     # If you pass :manage it will apply to every action. Other common actions
@@ -39,11 +40,11 @@ class Ability
     can(:crud, Product) do |product|
       product.user == user 
     end 
+
     can(:crud, Review) do |review|
       # review.user == user || review.question.user = user
       review.user == user
     end
-
-
   end
+  
 end

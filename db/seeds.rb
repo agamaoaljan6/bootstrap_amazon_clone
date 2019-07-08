@@ -11,8 +11,8 @@
 # rails db:seed
 
 
-NUM_PRODUCTS = 200
-NUM_USERS = 10
+NUM_PRODUCTS = 0
+NUM_USERS = 0
 PASSWORD = "supersecret"
 
 # destroy will run callbacks

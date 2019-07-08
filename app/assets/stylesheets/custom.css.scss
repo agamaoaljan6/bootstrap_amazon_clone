@@ -19,6 +19,9 @@
     min-height: 55vh;
 }
 
+.sign-up {
+    min-height: 60vh;
+}
 
 #logo:hover {
     color: #fff;
@@ -48,6 +51,10 @@
     
 }
 
+.contact-us {
+    min-height: 65vh;
+}
+
 .card {
     margin-bottom: 2em;
 }
@@ -70,9 +77,9 @@
 }
 
 .product-body {
-    border-top: 1px solid #eaeaea;
-    padding-top: 15px;
-    padding-bottom:15px;
+   
+    padding-top: 2em;
+    padding-bottom:3em;
 }
 
 .product-actions {

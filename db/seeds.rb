@@ -15,9 +15,15 @@ NUM_PRODUCTS = 200
 NUM_USERS = 10
 PASSWORD = "supersecret"
 
-Review.destroy_all
-# Product.delete_all
-# User.delete_all
+# destroy will run callbacks
+# delete will avoid callbacks
+
+
+# should be in order
+
+Review.destroy_all 
+Product.destroy_all
+User.destroy_all
 
 super_user = User.create(
   first_name: "Jon",
@@ -40,7 +46,7 @@ users = User.all
 
 NUM_PRODUCTS.times do
   created_at = Faker::Date.backward(365 * 5)
-  q = Product.create(
+  p = Product.create(
     # Faker is a ruby module. We access classes
     # or other modules inside of it with ::.
     # Here, Hacker is a class inside of the
@@ -51,10 +57,12 @@ NUM_PRODUCTS.times do
     updated_at: created_at,
     user: users.sample
   )
-  if q.valid?
-    q.reviews = rand(0..15).times.map do
+
+  if p.valid?
+    p.reviews = rand(0..15).times.map do
       Review.new(
         body: Faker::GreekPhilosophers.quote,
+        rating: rand(0..5),
         user: users.sample
       )
     end

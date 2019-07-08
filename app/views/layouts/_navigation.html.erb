@@ -31,7 +31,7 @@
     <form class="form-inline my-2 my-lg-0">
 
       <% if user_signed_in? %>
-      <%= link_to 'Sign Out', session_path,method: :delete, class: 'btn btn-outline-success my-2 my-sm-0 mr-2'%>
+      <%=link_to 'Sign Out', session_path,method: :delete, class: 'btn btn-outline-success my-2 my-sm-0 mr-2'%>
       <% else %>
       <%=link_to 'Sign Up', new_user_path, class: 'btn btn-outline-success my-2 my-sm-0 mr-2'%>
       <%=link_to 'Sign In', new_session_path, class: 'btn btn-outline-success my-2 my-sm-0 mr-2'%>

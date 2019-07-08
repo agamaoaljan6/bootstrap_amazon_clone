@@ -19,7 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'faker'
 gem 'pry-rails'
 gem 'cowsay'
-
+gem 'cancancan'
 
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'

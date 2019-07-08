@@ -2,6 +2,8 @@ class ProductsController < ApplicationController
 before_action :authenticate_user!, except: [:index, :show] 
 # authenticate_user! is found in application_controller 
 before_action :set_products, only: [:edit, :update, :show, :destroy]
+before_action :authorize!, only: [:edit, :update, :destroy]
+
 
   def index
       @products = Product.all
@@ -56,4 +58,11 @@ before_action :set_products, only: [:edit, :update, :show, :destroy]
   def set_products
       @product = Product.find(params[:id]) #querying a product
   end
+
+  def authorize! 
+    flash[:danger] = "Not Authorized!"
+    redirect_to root_path unless 
+    can?(:crud, @question)
+  end 
+
 end

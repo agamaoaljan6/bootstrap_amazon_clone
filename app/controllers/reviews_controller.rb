@@ -1,6 +1,8 @@
 class ReviewsController < ApplicationController
-
     before_action :authenticate_user!
+    before_action :find_review, only: [:destroy, :toggle_hidden]
+    before_action :authorize!, only: [:edit, :update, :destroy]
+    before_action :authorize_toggle!, only: [:toggle_hidden]
     def create
         @product = Product.find(params[:product_id]) #query the product id (looking for the id of the product)        
         @review = Review.new review_params
@@ -19,13 +21,10 @@ class ReviewsController < ApplicationController
         end
     end 
     
-    def hide 
-        review = Review.find(params[:review_id])
-        review.hidden = false
-        review.user = current_user
-        review.save
-        flash[:success] = "review hidden successfully!"
-        redirect_to product_path(review.product)
+    def toggle_hidden
+        # update the boolean field 'hidden' to whatever it isn't currently
+        @review.update(hidden: !@review.hidden?)
+        redirect_to product_path(@review.product), notice: "Review #{@review.hidden ? 'hidden' : 'shown'}."
     end
 
     def destroy
@@ -39,6 +38,17 @@ class ReviewsController < ApplicationController
     
     def review_params
         params.require(:review).permit(:body, :rating)
+    end
+    def find_review
+        @review = Review.find params[:id]
+    end
+
+    def authorize!
+        redirect_to root_path, alert: "access denied" unless can? :crud, @review
+    end
+
+    def authorize_toggle!
+        redirect_to root_path, alert: "access denied" unless can? :crud, @review.product
     end
     
 end

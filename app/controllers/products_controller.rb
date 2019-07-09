@@ -29,6 +29,11 @@ before_action :authorize!, only: [:edit, :update, :destroy]
   def show
       @review = Review.new
       @reviews = @product.reviews.order(created_at: :desc)
+      if can? :crud, @product
+        @reviews = @product.reviews.order(created_at: :desc)
+      else
+        @reviews = @product.reviews.where(hidden: false).order(created_at: :desc)
+      end
   end
 
   def edit 

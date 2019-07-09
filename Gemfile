@@ -24,7 +24,7 @@ gem 'cancancan'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
-gem 'administrate'
+
 
 
 # Use CoffeeScript for .coffee assets and views

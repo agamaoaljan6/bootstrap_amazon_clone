@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get('/contact_us', { to: 'contacts#index', as: :contact })
   post('/contact_us', { to: 'contacts#create' })
 
-  patch '/products/:product_id/reviews/:review_id/hide', { to:'reviews#hide'}
+  patch "/reviews/:id/toggle" => "reviews#toggle_hidden", as: "toggle_hidden"
 
 
   resources :users, only: [:new, :create]

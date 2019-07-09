@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_07_08_232408) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.boolean "hidden", default: true
+    t.boolean "hidden", default: false
     t.index ["product_id"], name: "index_reviews_on_product_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end

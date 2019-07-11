@@ -54,10 +54,10 @@ end
 
 describe "#index" do 
     it "assigns @articles to all created articles (sorted_by created_at)" do  #rename
-        article_1 = FactoryBot.create(:article)
-        article_2 = FactoryBot.create(:article)
+        article_3 = FactoryBot.create(:article)
+        article_4 = FactoryBot.create(:article)
         get :index
-        expect(assigns(:articles)).to eq([article_1, article_2]) # :articles should be the same in index method
+        expect(assigns(:articles)).to eq([article_3, article_4]) # :articles should be the same in index method
     end
 
     it "renders index template" do 

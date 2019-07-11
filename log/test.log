@@ -7031,3 +7031,433 @@ Processing by ArticlesController#edit as HTML
   Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
 Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms)
   [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered articles/new.html.erb within layouts/application (1.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 76ms (Views: 10.6ms | ActiveRecord: 52.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered articles/new.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (125.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+Processing by ArticlesController#create as HTML
+  Parameters: {"article"=>{"description"=>"Retail", "published_at"=>"2016-09-23", "title"=>"Construction Orchestrator"}}
+Unpermitted parameter: :published_at
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (41.8ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Retail"], ["LIMIT", 1]]
+  [1m[36mArticle Create (2.4ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Construction Orchestrator"], ["description", "Retail"], ["created_at", "2019-07-11 20:09:51.413562"], ["updated_at", "2019-07-11 20:09:51.413562"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/articles/354
+Completed 302 Found in 50ms (ActiveRecord: 44.5ms)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by ArticlesController#create as HTML
+  Parameters: {"article"=>{"description"=>"Farming", "published_at"=>"2019-02-11", "title"=>"Banking Representative"}}
+Unpermitted parameter: :published_at
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Farming"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Banking Representative"], ["description", "Farming"], ["created_at", "2019-07-11 20:09:51.426613"], ["updated_at", "2019-07-11 20:09:51.426613"]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/articles/355
+Completed 302 Found in 5ms (ActiveRecord: 1.8ms)
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY "articles"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+Processing by ArticlesController#create as HTML
+  Parameters: {"article"=>{"description"=>"Mining", "published_at"=>"2018-01-31", "title"=>""}}
+Unpermitted parameter: :published_at
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Mining"], ["LIMIT", 1]]
+  [1m[35m (30.9ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering articles/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered articles/new.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 36ms (Views: 0.9ms | ActiveRecord: 31.5ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by ArticlesController#create as HTML
+  Parameters: {"article"=>{"description"=>"Marketing", "published_at"=>"2017-05-15", "title"=>""}}
+Unpermitted parameter: :published_at
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Marketing"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering articles/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered articles/new.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Marketing"], ["LIMIT", 1]]
+  [1m[36mArticle Create (1.9ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Customer Banking Administrator"], ["description", "Marketing"], ["published_at", "2017-04-21"], ["created_at", "2019-07-11 20:09:51.487072"], ["updated_at", "2019-07-11 20:09:51.487072"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"356"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 356], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered articles/show.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Mining"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Central Education Representative"], ["description", "Mining"], ["published_at", "2017-08-12"], ["created_at", "2019-07-11 20:09:51.521351"], ["updated_at", "2019-07-11 20:09:51.521351"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"357"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 357], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered articles/show.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Construction"], ["LIMIT", 1]]
+  [1m[36mArticle Create (1.4ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Legal Specialist"], ["description", "Construction"], ["published_at", "2014-10-20"], ["created_at", "2019-07-11 20:09:51.530288"], ["updated_at", "2019-07-11 20:09:51.530288"]]
+  [1m[35m (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Construction"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered articles/index.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Accounting"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "International Banking Representative"], ["description", "Accounting"], ["published_at", "2018-07-16"], ["created_at", "2019-07-11 20:09:51.557288"], ["updated_at", "2019-07-11 20:09:51.557288"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"id"=>"359"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 359], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Destroy (0.2ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = $1[0m  [["id", 359]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/articles
+Completed 302 Found in 2ms (ActiveRecord: 1.0ms)
+  [1m[36mArticle Load (3.9ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 359], ["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Retail"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Retail Designer"], ["description", "Retail"], ["published_at", "2015-06-22"], ["created_at", "2019-07-11 20:09:51.575510"], ["updated_at", "2019-07-11 20:09:51.575510"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"id"=>"360"}
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 360], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Destroy (2.0ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = $1[0m  [["id", 360]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/articles
+Completed 302 Found in 8ms (ActiveRecord: 3.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Administration"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Design Associate"], ["description", "Administration"], ["published_at", "2015-07-19"], ["created_at", "2019-07-11 20:09:51.591395"], ["updated_at", "2019-07-11 20:09:51.591395"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArticlesController#update as HTML
+  Parameters: {"article"=>{"title"=>"Design Associate Plus Changes!"}, "id"=>"361"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 361], ["LIMIT", 1]]
+  [1m[35m (1.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (5.9ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 AND "articles"."id" != $2 LIMIT $3[0m  [["description", "Administration"], ["id", 361], ["LIMIT", 1]]
+  [1m[36mArticle Update (0.5ms)[0m  [1m[33mUPDATE "articles" SET "title" = $1, "updated_at" = $2 WHERE "articles"."id" = $3[0m  [["title", "Design Associate Plus Changes!"], ["updated_at", "2019-07-11 20:09:51.604901"], ["id", 361]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/articles/361
+Completed 302 Found in 13ms (ActiveRecord: 8.2ms)
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 361], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Community-Services"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Human Agent"], ["description", "Community-Services"], ["published_at", "2017-05-06"], ["created_at", "2019-07-11 20:09:51.611086"], ["updated_at", "2019-07-11 20:09:51.611086"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArticlesController#update as HTML
+  Parameters: {"article"=>{"title"=>"Human Agent plus changes!"}, "id"=>"362"}
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 362], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 AND "articles"."id" != $2 LIMIT $3[0m  [["description", "Community-Services"], ["id", 362], ["LIMIT", 1]]
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "title" = $1, "updated_at" = $2 WHERE "articles"."id" = $3[0m  [["title", "Human Agent plus changes!"], ["updated_at", "2019-07-11 20:09:51.621643"], ["id", 362]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/articles/362
+Completed 302 Found in 9ms (ActiveRecord: 2.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Real-Estate"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.2ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Administration Assistant"], ["description", "Real-Estate"], ["published_at", "2019-02-04"], ["created_at", "2019-07-11 20:09:51.626566"], ["updated_at", "2019-07-11 20:09:51.626566"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Hospitality"], ["LIMIT", 1]]
+  [1m[36mArticle Create (2.5ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Banking Consultant"], ["description", "Hospitality"], ["published_at", "2016-11-19"], ["created_at", "2019-07-11 20:09:51.629693"], ["updated_at", "2019-07-11 20:09:51.629693"]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"364"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 364], ["LIMIT", 1]]
+  Rendering articles/edit.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered articles/edit.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Technology"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.2ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Customer Assistant"], ["description", "Technology"], ["published_at", "2018-09-11"], ["created_at", "2019-07-11 20:09:51.642745"], ["updated_at", "2019-07-11 20:09:51.642745"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Hospitality"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Government Director"], ["description", "Hospitality"], ["published_at", "2017-03-26"], ["created_at", "2019-07-11 20:09:51.645366"], ["updated_at", "2019-07-11 20:09:51.645366"]]
+  [1m[35m (1.9ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"366"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 366], ["LIMIT", 1]]
+  Rendering articles/edit.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered articles/edit.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered articles/new.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 25ms (Views: 8.1ms | ActiveRecord: 3.9ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered articles/new.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+Processing by ArticlesController#create as HTML
+  Parameters: {"article"=>{"description"=>"Administration", "published_at"=>"2014-11-01", "title"=>"Principal Manufacturing Analyst"}}
+Unpermitted parameter: :published_at
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Administration"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Principal Manufacturing Analyst"], ["description", "Administration"], ["created_at", "2019-07-11 20:10:26.986337"], ["updated_at", "2019-07-11 20:10:26.986337"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/articles/367
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by ArticlesController#create as HTML
+  Parameters: {"article"=>{"description"=>"Education", "published_at"=>"2015-01-17", "title"=>"Human Consultant"}}
+Unpermitted parameter: :published_at
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Education"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.2ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Human Consultant"], ["description", "Education"], ["created_at", "2019-07-11 20:10:26.993830"], ["updated_at", "2019-07-11 20:10:26.993830"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/articles/368
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY "articles"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+Processing by ArticlesController#create as HTML
+  Parameters: {"article"=>{"description"=>"Marketing", "published_at"=>"2017-10-07", "title"=>""}}
+Unpermitted parameter: :published_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Marketing"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering articles/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered articles/new.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by ArticlesController#create as HTML
+  Parameters: {"article"=>{"description"=>"Marketing", "published_at"=>"2016-07-14", "title"=>""}}
+Unpermitted parameter: :published_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Marketing"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering articles/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered articles/new.html.erb within layouts/application (0.9ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Healthcare"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.2ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Government Orchestrator"], ["description", "Healthcare"], ["published_at", "2018-10-02"], ["created_at", "2019-07-11 20:10:27.028270"], ["updated_at", "2019-07-11 20:10:27.028270"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"369"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 369], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered articles/show.html.erb within layouts/application (1.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Community-Services"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Marketing Strategist"], ["description", "Community-Services"], ["published_at", "2016-06-10"], ["created_at", "2019-07-11 20:10:27.064398"], ["updated_at", "2019-07-11 20:10:27.064398"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"370"}
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 370], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered articles/show.html.erb within layouts/application (0.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Sales"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.2ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Design Officer"], ["description", "Sales"], ["published_at", "2015-04-07"], ["created_at", "2019-07-11 20:10:27.076084"], ["updated_at", "2019-07-11 20:10:27.076084"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Farming"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.2ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "IT Representative"], ["description", "Farming"], ["published_at", "2018-10-11"], ["created_at", "2019-07-11 20:10:27.078484"], ["updated_at", "2019-07-11 20:10:27.078484"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered articles/index.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered articles/index.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Government"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.2ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Customer Technology Designer"], ["description", "Government"], ["published_at", "2016-07-15"], ["created_at", "2019-07-11 20:10:27.093228"], ["updated_at", "2019-07-11 20:10:27.093228"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"id"=>"373"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 373], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Destroy (0.2ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = $1[0m  [["id", 373]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/articles
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 373], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Marketing"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Customer Hospitality Architect"], ["description", "Marketing"], ["published_at", "2018-08-02"], ["created_at", "2019-07-11 20:10:27.110336"], ["updated_at", "2019-07-11 20:10:27.110336"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"id"=>"374"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 374], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Destroy (0.4ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = $1[0m  [["id", 374]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/articles
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+  [1m[35m (3.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "IT"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.2ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Legacy Retail Facilitator"], ["description", "IT"], ["published_at", "2017-12-05"], ["created_at", "2019-07-11 20:10:27.128911"], ["updated_at", "2019-07-11 20:10:27.128911"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArticlesController#update as HTML
+  Parameters: {"article"=>{"title"=>"Legacy Retail Facilitator Plus Changes!"}, "id"=>"375"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 375], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 AND "articles"."id" != $2 LIMIT $3[0m  [["description", "IT"], ["id", 375], ["LIMIT", 1]]
+  [1m[36mArticle Update (1.6ms)[0m  [1m[33mUPDATE "articles" SET "title" = $1, "updated_at" = $2 WHERE "articles"."id" = $3[0m  [["title", "Legacy Retail Facilitator Plus Changes!"], ["updated_at", "2019-07-11 20:10:27.138096"], ["id", 375]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/articles/375
+Completed 302 Found in 13ms (ActiveRecord: 3.9ms)
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 375], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Hospitality"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Internal Orchestrator"], ["description", "Hospitality"], ["published_at", "2016-03-01"], ["created_at", "2019-07-11 20:10:27.148014"], ["updated_at", "2019-07-11 20:10:27.148014"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArticlesController#update as HTML
+  Parameters: {"article"=>{"title"=>"Internal Orchestrator plus changes!"}, "id"=>"376"}
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 376], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 AND "articles"."id" != $2 LIMIT $3[0m  [["description", "Hospitality"], ["id", 376], ["LIMIT", 1]]
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "title" = $1, "updated_at" = $2 WHERE "articles"."id" = $3[0m  [["title", "Internal Orchestrator plus changes!"], ["updated_at", "2019-07-11 20:10:27.160863"], ["id", 376]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/articles/376
+Completed 302 Found in 9ms (ActiveRecord: 2.9ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Education"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.8ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Global Mining Facilitator"], ["description", "Education"], ["published_at", "2015-07-12"], ["created_at", "2019-07-11 20:10:27.167903"], ["updated_at", "2019-07-11 20:10:27.167903"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Mining"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Chief Sales Administrator"], ["description", "Mining"], ["published_at", "2017-08-12"], ["created_at", "2019-07-11 20:10:27.173583"], ["updated_at", "2019-07-11 20:10:27.173583"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"378"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 378], ["LIMIT", 1]]
+  Rendering articles/edit.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered articles/edit.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "Sales"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Sales Administrator"], ["description", "Sales"], ["published_at", "2019-05-03"], ["created_at", "2019-07-11 20:10:27.181100"], ["updated_at", "2019-07-11 20:10:27.181100"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArticle Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "articles" WHERE "articles"."description" = $1 LIMIT $2[0m  [["description", "IT"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.2ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Direct Healthcare Planner"], ["description", "IT"], ["published_at", "2015-06-28"], ["created_at", "2019-07-11 20:10:27.186680"], ["updated_at", "2019-07-11 20:10:27.186680"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"380"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 380], ["LIMIT", 1]]
+  Rendering articles/edit.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered articles/edit.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m

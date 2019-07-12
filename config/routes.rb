@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create, :destroy]
   end
 
-  resources :articles, only: [:new, :create, :show, :index, :destroy,]
+  resources :articles, only: [:new, :create, :show, :index, :destroy, :edit]
   resources :articles
 
 end

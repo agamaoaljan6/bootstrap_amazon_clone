@@ -1,43 +1,107 @@
 require 'rails_helper'
 
 RSpec.describe ArticlesController, type: :controller do
-describe "#new" do
-    it "should display index page" do
-        get :new 
-        expect(response).to render_template :new 
+    def current_user
+        @current_user ||= FactoryBot.create(:user)
+    end
+    
+describe "#index" do 
+    it "assigns @articles to all created articles (sorted_by created_at)" do  #rename
+        article_1 = FactoryBot.create(:article)
+        article_2 = FactoryBot.create(:article)
+        get :index
+        expect(assigns(:articles)).to eq([article_1, article_2]) # :articles should be the same in index method
     end
 
-    it "should create @article" do 
-        get :new
-        expect(assigns(:article)).to(be_a_new(Article))
+    it "renders index template" do 
+    get :index 
+    expect(response).to render_template :index
     end
 end
 
-describe "#create" do
-    context "with valid parameters" do
-        it "should create a new article in database" do 
-            expect {
-            post :create, params: {article: FactoryBot.attributes_for(:article)}
-            }.to change(Article, :count).by(1)
+describe "#new" do
+
+    context "without signed in user" do
+        it "should redirect to sign in page" do
+            get :new
+            expect(response).to redirect_to new_session_path
         end
-        it "redirects to new article" do 
-            post :create, params: {article: FactoryBot.attributes_for(:article)}
-            expect(response).to redirect_to article_path(Article.last)
-        end    
     end
 
-    context "with invalid parameters" do
-        it "should not create a new article in database" do 
-            expect {
-            post :create, params: {article: FactoryBot.attributes_for(:invalid_article)}
-            }.to_not change(Article, :count)
+    context "with signed in user" do
+        before do
+            session[:user_id] = current_user.id
         end
-        it "renders new template" do
-            post :create, params: {article: FactoryBot.attributes_for(:invalid_article)}
+        it "renders a new template" do
+            get :new
             expect(response).to render_template :new
         end
+        
+        it "sets an instance variable with a new JobPost" do
+            get :new
+            expect(assigns(:article)).to(be_a_new(Article))
+        end
     end
+    
 end
+
+describe '#create' do
+    def valid_request
+        post :create, params: {
+          article: FactoryBot.attributes_for(:article)
+        }
+    end
+
+    context 'with no user signed in' do
+      it 'redirects to the sign in page' do
+        valid_request
+        expect(response).to redirect_to new_session_path
+      end
+    end
+    
+    context 'with user signed in do' do
+    before do
+        session[:user_id] = current_user.id
+    end
+
+
+    context 'with valid parameters' do
+
+        it 'create a new news article in the db' do
+          count_before = Article.count
+          valid_request
+          count_after = Article.count
+          expect(count_after).to eq(count_before + 1)
+        end
+
+        it 'redirects to the show page of that news article' do
+          valid_request
+          expect(response).to redirect_to(article_path(Article.last))
+        end
+    end
+
+      context 'with invalid parameters' do
+        def invalid_request
+          post :create, params: {
+            article: FactoryBot.attributes_for(:article, title: nil)
+          }
+        end
+
+        it "doesn't create a news article in the database" do
+          count_before = Article.count
+          invalid_request
+          count_after = Article.count
+          expect(count_after).to eq(count_before)
+        end
+
+        it "renders the new template" do
+          invalid_request
+          expect(response).to render_template(:new)
+        end
+      end
+    end
+  end
+
 
 describe "#show" do 
     it "assigns article to @article" do
@@ -52,19 +116,6 @@ describe "#show" do
     end
 end
 
-describe "#index" do 
-    it "assigns @articles to all created articles (sorted_by created_at)" do  #rename
-        article_3 = FactoryBot.create(:article)
-        article_4 = FactoryBot.create(:article)
-        get :index
-        expect(assigns(:articles)).to eq([article_3, article_4]) # :articles should be the same in index method
-    end
-
-    it "renders index template" do 
-    get :index 
-    expect(response).to render_template :index
-    end
-end
 
 describe "#destroy" do
     it "destroys articles in the database" do
@@ -82,44 +133,80 @@ end
 describe "#update" do
     before  do 
         @article = FactoryBot.create(:article)
+        # session[:user_id] = current_user.id
     end   
+
+    context "if user not signed in" do
+        it 'redirects the user to the sign up page' do
+        get :new
+        post :create, params: {
+            article: FactoryBot.attributes_for(:article)
+          }
+          expect(response).to redirect_to new_session_path 
+        end
+    end
+    
     context "valid attributes" do
         it "updates the news article record with new attributes" do
             new_title = "#{@article.title} Plus Changes!"
             patch :update, params: {id: @article.id, article: {title: new_title}}
             expect(@article.reload.title).to eq(new_title)
         end
-        # it "updates articles in the database" do 
-        #     article = 
-        #     put :update, params: {article: FactoryBot.attributes_for(:article)}
-        #     assigns(:article).should eq(@article) 
-        # end    
         it "redirect to the news article show page" do
             new_title = "#{@article.title} plus changes!"
             patch :update, params: {id: @article.id, article: {title: new_title}}
             expect(response).to redirect_to(@article)
         end
-        # it "redirects to the updated contact" do
-        #     put :update, params: {article: FactoryBot.attributes_for(:article)}
-        #     response.should redirect_to articles_path
-        # end
+
     end
       
 
-    describe "#edit" do
-        it "renders the edit template" do
-            article = FactoryBot.create(:article)
-            get :edit, params: { id: article.id }
-            expect(response).to render_template :edit
-        end
+end 
 
-        it "sets an instance variable based on the article id that is passed" do
-            article = FactoryBot.create(:article)
-            get :edit, params: { id: article.id }
-            expect(assigns(:article)).to eq(article)
+describe "#edit" do
+    before  do 
+        @article = FactoryBot.create(:article)
+        # session[:user_id] = current_user.id
+    end  
+    context "if user not signed in" do
+        it 'redirects to sign in page' do
+        get :edit, params: { id: @article.id }
+        # post :create, params: {
+        #     article: FactoryBot.attributes_for(:article)
+        #   } 
+        expect(response).to redirect_to new_session_path   
         end
     end
 
-end 
+    context "with user signed in" do
+        context "with authorized user" do
+  
+          before do
+            request.session[:user_id] = current_user.id
+            get :edit, params: { id: @article.id }
+          end
+  
+          it "renders the edit template" do
+            get :edit, params: { id: @article.id }
+            expect(response).to render_template :edit
+          end
+      
+          it "sets an instance variable based on the article id that is passed" do
+            get :edit, params: { id: @article.id }
+            expect(assigns(:article)).to eq(@article)
+          end
+        end
+    end
+      
+    context "with unauthorized user" do
+        before do
+          get :edit, params: { id: @article.id }
+        end
+
+        it "redirects to the new session path path" do
+          expect(response).to redirect_to new_session_path
+        end
+    end
+end  
 
 end

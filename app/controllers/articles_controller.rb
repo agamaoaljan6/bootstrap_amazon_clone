@@ -1,12 +1,13 @@
 class ArticlesController < ApplicationController
     before_action :find_article, only: [:edit, :update]
-    
+    before_action :authenticate_user!, only: [:new, :create, :edit]
     def new
         @article = Article.new
     end 
 
     def create 
         @article = Article.new params.require(:article).permit(:title, :description)
+        @article.user = current_user
         if @article.save
             redirect_to article_path(@article) # @article = id of the article 
         else
